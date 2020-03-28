@@ -1,0 +1,128 @@
+/* Style global */
+
+html {
+    background-color: #13293d;
+    font-size: 1.4em;
+    color: #13293d;
+}
+
+body {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding-bottom: 1.5%;
+    background-color: #e8e8e8;
+    text-align: center;
+}
+
+div {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+}
+
+h1 {
+    padding-top: 1%;
+    margin-bottom: 1.5%;
+    font-size: 5em;
+}
+
+p {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table {
+    margin : auto;
+}
+
+button {
+    font-size: 1em;
+    width: 45%;
+    height: 75%;
+    background-color: #e8e8e8;
+    border: solid;
+    border-color: #454851;
+    margin-top: 0.2em;
+    cursor: pointer;
+}
+
+button:disabled {
+    color: #81717a;
+    cursor: auto;
+}
+
+select {
+    height: 1.7em;
+    width : 26%;
+    font-size: 1em;
+    background-color: #e8e8e8;
+    border-style: solid;
+    border-color: #13293d;
+    border-width: thick;
+}
+
+a {
+    color: #81717a;
+}
+
+input[type = text], input[type = number] {
+    height : 1.3em;
+    width : 25%;
+    font-size: 1em;
+    text-align: center;
+    background-color: #e8e8e8;
+    border-style: solid;
+    border-width: thick;
+    border-color: #13293d;
+}
+
+textarea {
+    resize: none;
+    font-size: 1em;
+    background-color: #e8e8e8;
+    border-style: solid;
+    border-width: thick;
+    border-color: #13293d;
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td > table {
+    width: 100%;
+}
+
+table, tr, td {
+    border-style: solid;
+    border-width: thick;
+}
+
+/* SOURCE : W3School */
+input[type = range] {
+    -webkit-appearance: none;
+    height: 2em;
+    background-color: #8ea4d2;
+}
+
+input[type = range]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 2em; /* Set a specific slider handle width */
+  height: 2em; /* Slider handle height */
+  background: #454851; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+input[type = range]::-moz-range-thumb {
+  width: 2em; /* Set a specific slider handle width */
+  height: 2em; /* Slider handle height */
+  background: #454851; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}

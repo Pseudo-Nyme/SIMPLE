@@ -1,0 +1,23 @@
+{
+    "nom":"",
+    "prenom":"",
+    "race":"",
+    "classe":"",
+    "genre":"",
+    "age":"",
+    "histoire":"",
+    
+    "vie":19,
+    "niveau":"1",
+    "pointsRestant":2,
+    
+    "corps":"1",
+    "combat":"1",
+    "mental":"1",
+    "social":"1",
+    
+    "specialisationsCorps":["Force Brut"],
+    "specialisationsCombat":["Attaque Réfléchie"],
+    "specialisationsMental":["Ingénierie"],
+    "specialisationsSocial":["Langue De Bois"]
+}

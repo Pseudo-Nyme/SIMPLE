@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <title>Créateur de personnage S.I.M.P.L.E</title>
+	<meta charset="utf-8">
+    <script type="text/javascript" src="../js/cp_script_v2.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/createur_personnage.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css"/>
+</head>
+    
+<body onload="init()">	
+    <h1>Créateur de personnage</h1>
+    
+    <div id="selecteur">
+        <button type="button" onclick="afficherOnglet()" value="i">Identité</button>
+        <button type="button" onclick="afficherOnglet()" value="c">Caractéristiques</button>
+    </div>
+    
+    <div id="pageIdentite">
+        <h2>Identité</h2>
+        
+        <p>Les champs suivants ne sont pas nécessaires à la création d'une fiche.</p>
+        
+        <h3>Nom(s)</h3>
+        <input type="text" id="textNom">
+        
+        <h3>Prenom(s)</h3>
+        <input type="text" id="textPrenom">
+        
+        <h3>Race</h3>
+        <select name="selectRace" id="selectRace">
+            <option value="Humain">Humain</option>
+            <option value="Nain">Nain</option>
+            <option value="Elfe">Elfe</option>
+            <option value="Orc">Orc</option>
+        </select>
+        
+        <h3>Classe</h3>
+        <select name="selectClasse" id="selectClasse">
+            <option value="Soldat">Soldat</option>
+            <option value="Mage">Mage</option>
+            <option value="Paladin">Paladin</option>
+            <option value="Barde">Barde</option>
+        </select>
+        
+        <h3>Genre</h3>
+        <input type="text" id="textGenre">
+        
+        <h3>Age</h3>
+        <input type="number" id="numberAge">
+        
+        <h3>Histoire</h3>
+        <textarea id="textHistoire" maxlength="500"></textarea>
+    </div>
+    
+    <div id="pageCaracteristiques">
+        <h2>Caractéristiques</h2>
+        
+        <!-- NIVEAU -->
+        <div id="niveau">
+            <h3>Niveau :</h3>
+            <input type="range" id="rangeNiveau" min="1" max="10" step="1" value="1" onchange="changerPoints()">
+        </div>
+        
+        <p id="pointsDisponibles"></p>
+        
+        <!-- EXPLICATIONS -->
+        <div id="explications">
+            <p>Un personnage est composé de <b>Performances</b> (notées entre 1 et 4) et de <b>Spécialisations</b> correspondant aux Performances (au moins une par Performance)</p>
+            <table>
+                <tr>
+                    <td>Performances</td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td>Niveau 2</td>
+                                <td>2 Points</td>
+                            </tr>
+                            <tr>
+                                <td>Niveau 3 & 4</td>
+                                <td>3 Points</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Spécialisations</td>
+                    <td>1 Point</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- PERFORMANCES -->
+        <div id="performances">
+            <h3>Performances :</h3>
+            
+            
+            <div class="performance">
+                <h4>Corps</h4>
+                <input type="range" id="rangeCorps" min="1" max="4" step="1" value="1" onchange="changerPoints()">
+            </div>
+            
+            <div class="performance">
+                <h4>Combat</h4>
+                <input type="range" id="rangeCombat" min="1" max="4" step="1" value="1" onchange="changerPoints()">
+            </div>
+            
+            <div class="performance">
+                <h4>Mental</h4>
+                <input type="range" id="rangeMental" min="1" max="4" step="1" value="1" onchange="changerPoints()">
+            </div>
+            
+            <div class="performance">
+                <h4>Social</h4>
+                <input type="range" id="rangeSocial" min="1" max="4" step="1" value="1" onchange="changerPoints()">
+            </div>
+        </div>
+
+        <!-- SPECIALISATIONS -->
+        <div id="specialisations">
+            <h3>Specialisations</h3>
+            
+            <div class="specialisation" id="specialisationCorps">
+                <h4>Corps :</h4>
+                
+                <label for="ForceBrut" class="container">Force brut
+                    <input type="checkbox" class="checkbox checkboxCorps" id="ForceBrut" value="Force Brut" onchange="changerPoints()">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label for="PassageEnForce" class="container">Passage En Force
+                    <input type="checkbox" class="checkbox checkboxCorps" id="PassageEnForce" value="Passage En Force" onchange="changerPoints()">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            
+            <div class="specialisation" id="specialisationCombat">
+                <h4>Combat :</h4>
+                
+                <label for="AttaqueReflechie" class="container">Attaque Réfléchie
+                    <input type="checkbox" class="checkbox checkboxCombat" id="AttaqueReflechie" value="Attaque Réfléchie" onchange="changerPoints()">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label for="Sismique" class="container">Sismique
+                    <input type="checkbox" class="checkbox checkboxCombat" id="Sismique" value="Sismique" onchange="changerPoints()">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            
+            <div class="specialisation" id="specialisationMental">
+                <h4>Mental :</h4>
+                
+                <label for="Ingenierie" class="container">Ingénierie
+                    <input type="checkbox" class="checkbox checkboxMental" id="Ingenierie" value="Ingénierie" onchange="changerPoints()">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label for="Erudit" class="container">Érudit
+                    <input type="checkbox" class="checkbox checkboxMental" id="Erudit" value="Érudit" onchange="changerPoints()">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            
+            <div class="specialisation" id="specialisationSocial">
+                <h4>Social :</h4>
+                
+                <label for="LangueDeBois" class="container">Langue De Bois
+                    <input type="checkbox" class="checkbox checkboxSocial" id="LangueDeBois" value="Langue De Bois" onchange="changerPoints()">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label for="BoucEmissaire" class="container">Bouc Émissaire
+                    <input type="checkbox" class="checkbox checkboxSocial" id="BoucEmissaire" value="Bouc Émissaire" onchange="changerPoints()">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    
+    <p id="alerte"></p>
+    
+    <div id="fin">
+        <button type="button" id="bt" onclick="creerPersonnage()">Créer personnage</button>
+    </div>
+</body>
+</html>
