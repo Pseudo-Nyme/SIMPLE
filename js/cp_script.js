@@ -17,16 +17,16 @@ let textHistoire = "#textHistoire";
 
 //Caractéristiques
 let rangeNiveau = "#rangeNiveau";
-let pointsDisponibles = "#pointsDisponibles";
+let pointsRestant = "#pointsRestant";
 let rangeCorps = "#rangeCorps";
 let rangeCombat = "#rangeCombat";
 let rangeMental = "#rangeMental";
 let rangeSocial = "#rangeSocial";
 let listePerformances = [rangeCorps, rangeCombat, rangeMental, rangeSocial];
-let specialisationsCorps = "#specialisationsCorps";
-let specialisationsCombat = "#specialisationsCombat";
-let specialisationsMental = "#specialisationsMental";
-let specialisationSocial = "#specialisationSocial";
+let specialisationsCorps = ".checkboxCorps";
+let specialisationsCombat = ".checkboxCombat";
+let specialisationsMental = ".checkboxMental";
+let specialisationSocial = ".checkboxSocial";
 let listeSpécialisations = [specialisationsCorps, specialisationsCombat, specialisationsMental, specialisationSocial];
 
 //Général
@@ -62,8 +62,40 @@ function afficherOnglet(value) {
     }
 }
 
-function majPoints() {
+function modifierPointsMax() {
+    pointsMax = 1;
+    for(let i = 1; i <= $(rangeNiveau).val(); i++)
+        pointsMax += i;
+    
+    $(pointsRestant).text(pointsMax - pointsConsommés);
+}
+
+function modifierPointsRestant() {
     //TODO Calcul et affichage des points restants
+    pointsConsommés = 0;
+
+    listePerformances.forEach(p => {
+        let val = $(p).val();
+        if(val == 2)
+            pointsConsommés += 2;
+        else if(val == 3)
+            pointsConsommés += 5;
+        else if(val == 4)
+            pointsConsommés += 8;
+    });
+
+    listeSpécialisations.forEach(s => {
+        let nb = 0;
+        $(s).each(function() {
+            if($(this).is(':checked'))
+                nb++;
+
+            if(nb > 1)
+                pointsConsommés += (nb - 1);
+        });
+    });
+
+    $(pointsRestant).text(pointsMax - pointsConsommés);
 }
 
 function creerPersonnage() {
