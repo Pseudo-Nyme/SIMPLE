@@ -90,5 +90,24 @@ function download(data, filename) {
 }
 
 function Personnage() {
-    //TODO créer classe personnage
+    //Identié
+    this.nom = "Goodenough";
+    this.prenom = "David";
+    this.race = "Humain";
+    this.classe = "Barbare";
+    this.age = 1;
+    this.histoire = "Né dans la petite ville de Paris, il existe.";
+
+    //Caractéristiques
+    this.niveau = 1;
+    this.corps = 1;
+    this.combat = 1;
+    this.mental = 1;
+    this.social = 1;
+
+    //Spécialisations
+    this.speCorps = new Array();
+    this.speCombat = new Array();
+    this.speMental = new Array();
+    this.speSocial = new Array();
 }
