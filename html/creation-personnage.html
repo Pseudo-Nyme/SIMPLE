@@ -76,7 +76,7 @@
         <!-- NIVEAU -->
         <div id="divNiveau">
             <h3>Niveau :</h3>
-            <input type="range" id="rangeNiveau" min="1" max="10" step="1" value="1" onchange="changerPoints()">
+            <input type="range" id="rangeNiveau" min="1" max="10" step="1" value="1" onchange="modifierPointsMax()">
         </div>
         
         <p>Points disponibles : <b id="pointsRestant">[Non défini]</b></p>
@@ -114,22 +114,22 @@
             
             <div class="performance">
                 <h4>Corps</h4>
-                <input type="range" id="rangeCorps" min="1" max="4" step="1" value="1" onchange="changerPoints()">
+                <input type="range" id="rangeCorps" min="1" max="4" step="1" value="1" onchange="modifierPointsRestant()">
             </div>
             
             <div class="performance">
                 <h4>Combat</h4>
-                <input type="range" id="rangeCombat" min="1" max="4" step="1" value="1" onchange="changerPoints()">
+                <input type="range" id="rangeCombat" min="1" max="4" step="1" value="1" onchange="modifierPointsRestant()">
             </div>
             
             <div class="performance">
                 <h4>Mental</h4>
-                <input type="range" id="rangeMental" min="1" max="4" step="1" value="1" onchange="changerPoints()">
+                <input type="range" id="rangeMental" min="1" max="4" step="1" value="1" onchange="modifierPointsRestant()">
             </div>
             
             <div class="performance">
                 <h4>Social</h4>
-                <input type="range" id="rangeSocial" min="1" max="4" step="1" value="1" onchange="changerPoints()">
+                <input type="range" id="rangeSocial" min="1" max="4" step="1" value="1" onchange="modifierPointsRestant()">
             </div>
         </div>
 
@@ -141,12 +141,12 @@
                 <h4>Corps :</h4>
                 
                 <label for="ForceBrut" class="container">Force brut
-                    <input type="checkbox" class="checkbox checkboxCorps" id="ForceBrut" value="Force Brut" onchange="changerPoints()">
+                    <input type="checkbox" class="checkbox checkboxCorps" id="ForceBrut" value="Force Brut" onchange="modifierPointsRestant()">
                     <span class="checkmark"></span>
                 </label>
                 
                 <label for="PassageEnForce" class="container">Passage En Force
-                    <input type="checkbox" class="checkbox checkboxCorps" id="PassageEnForce" value="Passage En Force" onchange="changerPoints()">
+                    <input type="checkbox" class="checkbox checkboxCorps" id="PassageEnForce" value="Passage En Force" onchange="modifierPointsRestant()">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -155,12 +155,12 @@
                 <h4>Combat :</h4>
                 
                 <label for="AttaqueReflechie" class="container">Attaque Réfléchie
-                    <input type="checkbox" class="checkbox checkboxCombat" id="AttaqueReflechie" value="Attaque Réfléchie" onchange="changerPoints()">
+                    <input type="checkbox" class="checkbox checkboxCombat" id="AttaqueReflechie" value="Attaque Réfléchie" onchange="modifierPointsRestant()">
                     <span class="checkmark"></span>
                 </label>
                 
                 <label for="Sismique" class="container">Sismique
-                    <input type="checkbox" class="checkbox checkboxCombat" id="Sismique" value="Sismique" onchange="changerPoints()">
+                    <input type="checkbox" class="checkbox checkboxCombat" id="Sismique" value="Sismique" onchange="modifierPointsRestant()">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -169,12 +169,12 @@
                 <h4>Mental :</h4>
                 
                 <label for="Ingenierie" class="container">Ingénierie
-                    <input type="checkbox" class="checkbox checkboxMental" id="Ingenierie" value="Ingénierie" onchange="changerPoints()">
+                    <input type="checkbox" class="checkbox checkboxMental" id="Ingenierie" value="Ingénierie" onchange="modifierPointsRestant()">
                     <span class="checkmark"></span>
                 </label>
                 
                 <label for="Erudit" class="container">Érudit
-                    <input type="checkbox" class="checkbox checkboxMental" id="Erudit" value="Érudit" onchange="changerPoints()">
+                    <input type="checkbox" class="checkbox checkboxMental" id="Erudit" value="Érudit" onchange="modifierPointsRestant()">
                     <span class="checkmark"></span>
                 </label>
             </div>
@@ -183,12 +183,12 @@
                 <h4>Social :</h4>
                 
                 <label for="LangueDeBois" class="container">Langue De Bois
-                    <input type="checkbox" class="checkbox checkboxSocial" id="LangueDeBois" value="Langue De Bois" onchange="changerPoints()">
+                    <input type="checkbox" class="checkbox checkboxSocial" id="LangueDeBois" value="Langue De Bois" onchange="modifierPointsRestant()">
                     <span class="checkmark"></span>
                 </label>
                 
                 <label for="BoucEmissaire" class="container">Bouc Émissaire
-                    <input type="checkbox" class="checkbox checkboxSocial" id="BoucEmissaire" value="Bouc Émissaire" onchange="changerPoints()">
+                    <input type="checkbox" class="checkbox checkboxSocial" id="BoucEmissaire" value="Bouc Émissaire" onchange="modifierPointsRestant()">
                     <span class="checkmark"></span>
                 </label>
             </div>
