@@ -2,13 +2,6 @@
 <html lang="fr">
 <head>
     <title>Créateur de personnage S.I.M.P.L.E</title>
-	<meta charset="utf-8">
-    <script type="text/javascript" src="../js/cp_script_v2.js"></script>
-    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/createur_personnage.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/checkbox.css"/>
-    
-    <title>Création d'un personnage S.I.M.P.L.E</title>
     <!-- <link rel="icon" href=""> -->
     
     <!-- META -->
@@ -17,21 +10,27 @@
     <meta name="keywords" content="créateur, createur, personnage, jdr, jeu de rôle, S.I.M.P.L.E, simple">
     <meta name="author" content="Pseudo_Nyme">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- CSS (A ENLEVER) -->
+    <link rel="stylesheet" type="text/css" href="../css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/createur_personnage.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/checkbox.css"/>
+
     <!-- LESS -->
     <link rel="stylesheet/less" type="text/css" href="../style/less.min.js" />
     <script type="text/javascript" src=""></script>
     
     <!-- JAVASCRIPT -->
-    <script type="text/javascript" src=""> </script>
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../js/cp_script.js"></script>
 </head>
     
 <body onload="init()">	
-    <h1>Créateur de personnage</h1>
+    <h1>Création de personnage</h1>
     
     <div id="selecteur">
-        <button type="button" onclick="afficherOnglet()" value="i">Identité</button>
-        <button type="button" onclick="afficherOnglet()" value="c">Caractéristiques</button>
+        <button id="buttonID" type="button" onclick="afficherOnglet('ID')">Identité</button>
+        <button id="buttonCA" type="button" onclick="afficherOnglet('CA')">Caractéristiques</button>
     </div>
     
     <div id="pageIdentite">
@@ -75,7 +74,7 @@
         <h2>Caractéristiques</h2>
         
         <!-- NIVEAU -->
-        <div id="niveau">
+        <div id="divNiveau">
             <h3>Niveau :</h3>
             <input type="range" id="rangeNiveau" min="1" max="10" step="1" value="1" onchange="changerPoints()">
         </div>
@@ -83,7 +82,7 @@
         <p id="pointsDisponibles"></p>
         
         <!-- EXPLICATIONS -->
-        <div id="explications">
+        <div id="divExplications">
             <p>Un personnage est composé de <b>Performances</b> (notées entre 1 et 4) et de <b>Spécialisations</b> correspondant aux Performances (au moins une par Performance)</p>
             <table>
                 <tr>
@@ -109,7 +108,7 @@
         </div>
         
         <!-- PERFORMANCES -->
-        <div id="performances">
+        <div id="divPerformances">
             <h3>Performances :</h3>
             
             
@@ -135,7 +134,7 @@
         </div>
 
         <!-- SPECIALISATIONS -->
-        <div id="specialisations">
+        <div id="divSpecialisations">
             <h3>Specialisations</h3>
             
             <div class="specialisation" id="specialisationCorps">
@@ -199,7 +198,7 @@
     <p id="alerte"></p>
     
     <div id="fin">
-        <button type="button" id="bt" onclick="creerPersonnage()">Créer personnage</button>
+        <button type="button" id="buttonCreerPersonnage" onclick="creerPersonnage()">Créer personnage</button>
     </div>
 </body>
 </html>

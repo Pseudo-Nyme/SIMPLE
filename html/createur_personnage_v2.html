@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
     <title>Créateur de personnage S.I.M.P.L.E</title>
-	<meta charset="utf-8">
+    <meta charset="utf-8">
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
     <script type="text/javascript" src="../js/cp_script_v2.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/main.css"/>
     <link rel="stylesheet" type="text/css" href="../css/createur_personnage.css"/>
@@ -13,10 +14,11 @@
     <h1>Créateur de personnage</h1>
     
     <div id="selecteur">
-        <button type="button" onclick="afficherOnglet()" value="i">Identité</button>
-        <button type="button" onclick="afficherOnglet()" value="c">Caractéristiques</button>
+        <button id="buttonIdentite" type="button" onclick="afficherOnglet(value)" value="i">Identité</button>
+        <button id="buttonCharacteristiques" type="button" onclick="afficherOnglet(value)" value="c">Caractéristiques</button>
     </div>
     
+    <!-- SECTION IDENTITE -->
     <div id="pageIdentite">
         <h2>Identité</h2>
         
@@ -54,11 +56,12 @@
         <textarea id="textHistoire" maxlength="500"></textarea>
     </div>
     
+    <!-- SECTION STATISTIQUES -->
     <div id="pageCaracteristiques">
         <h2>Caractéristiques</h2>
         
         <!-- NIVEAU -->
-        <div id="niveau">
+        <div id="divNiveau">
             <h3>Niveau :</h3>
             <input type="range" id="rangeNiveau" min="1" max="10" step="1" value="1" onchange="changerPoints()">
         </div>
@@ -66,7 +69,7 @@
         <p id="pointsDisponibles"></p>
         
         <!-- EXPLICATIONS -->
-        <div id="explications">
+        <div id="divExplications">
             <p>Un personnage est composé de <b>Performances</b> (notées entre 1 et 4) et de <b>Spécialisations</b> correspondant aux Performances (au moins une par Performance)</p>
             <table>
                 <tr>
@@ -92,7 +95,7 @@
         </div>
         
         <!-- PERFORMANCES -->
-        <div id="performances">
+        <div id="divPerformances">
             <h3>Performances :</h3>
             
             
@@ -118,10 +121,10 @@
         </div>
 
         <!-- SPECIALISATIONS -->
-        <div id="specialisations">
+        <div id="divSpecialisations">
             <h3>Specialisations</h3>
             
-            <div class="specialisation" id="specialisationCorps">
+            <div class="specialisation" id="specialisationsCorps">
                 <h4>Corps :</h4>
                 
                 <label for="ForceBrut" class="container">Force brut
@@ -135,7 +138,7 @@
                 </label>
             </div>
             
-            <div class="specialisation" id="specialisationCombat">
+            <div class="specialisation" id="specialisationsCombat">
                 <h4>Combat :</h4>
                 
                 <label for="AttaqueReflechie" class="container">Attaque Réfléchie
@@ -149,7 +152,7 @@
                 </label>
             </div>
             
-            <div class="specialisation" id="specialisationMental">
+            <div class="specialisation" id="specialisationsMental">
                 <h4>Mental :</h4>
                 
                 <label for="Ingenierie" class="container">Ingénierie
@@ -163,7 +166,7 @@
                 </label>
             </div>
             
-            <div class="specialisation" id="specialisationSocial">
+            <div class="specialisation" id="specialisationsSocial">
                 <h4>Social :</h4>
                 
                 <label for="LangueDeBois" class="container">Langue De Bois
@@ -181,8 +184,8 @@
     
     <p id="alerte"></p>
     
-    <div id="fin">
-        <button type="button" id="bt" onclick="creerPersonnage()">Créer personnage</button>
+    <div id="divCreerPersonnage">
+        <button type="button" id="buttonPersonnage" onclick="creerPersonnage()">Créer personnage</button>
     </div>
 </body>
 </html>
